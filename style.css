@@ -1,0 +1,275 @@
+/*****************************! 전체 영역 !*****************************/
+*{
+    list-style: none;
+    text-decoration: none;
+    /* font-family: "Mark Pro"; */
+    scroll-behavior: smooth;
+}
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+    margin : 0;
+    padding : 0;
+    background-color: #000;
+    color: #fff;
+    cursor: url(img/normal.cur),auto;
+}
+
+html a{
+    cursor: url(img/link.cur),auto;
+}
+
+html button{
+    cursor: url(img/link.cur),auto;
+}
+
+/*****************************! 헤더 영역 !*****************************/
+
+header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header .content {
+    width: 100%;
+    margin: 0 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav{
+    font-family: "Mark Pro";
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.sign_in{
+    font-family: "Mark Pro Bold";
+    display: flex;
+    align-items: center;   
+}
+
+.sign_in a{
+    background-color: #fff;
+    color: #000;
+    border-radius: 50px;
+    padding: 7px 25px;
+}
+
+/*****************************! 슬로건 영역 !*****************************/
+
+.slogan{
+    width: 100%;
+    height: auto;
+}
+
+.slogan .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.slogan .content .upper{
+    text-transform: uppercase;
+}
+
+.slogan .content .font_size{
+    font-size: clamp(60px, 6.8vw, 120px);
+}
+
+.slogan .content .font_family{
+    font-family: "Mark Pro Bold";
+}
+
+.slogan .content button{
+    font-family: "Mark Pro";
+    font-size: 24px;
+    border-radius: 50px;
+    padding: 20px 40px;
+    background: rgb(209, 54, 57);
+    border: none;
+}
+
+/*****************************! 비디오 영역 !*****************************/
+
+.video_container{
+    margin-top: 150px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video_container .content video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-size: cover;
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*****************************! 회사소개 영역 !*****************************/
+
+.info{
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0px;
+    inset: auto;
+    position: relative;
+    overflow: visible;
+    /* padding: 0px 0px 2500px; */
+    font-family: "Mark Pro bold";
+    background: linear-gradient(180deg, #111 0%, #272727 100%);
+}
+
+.info .content{
+    width: clamp(240px, 89vw, 1480px);
+    height: 100%;
+    margin: 0 auto;
+}
+
+.info .content .wrap{
+
+}
+
+.wrap p{
+    word-break: keep-all;
+}
+
+.wrap .font_size{
+    font-size: clamp(28px, 3.733vw, 72px);
+}
+
+i{
+    vertical-align:middle;
+}
+
+.ico.people{
+    width: clamp(36px, 4.8vw, 68px);
+    height: clamp(36px, 4.8vw, 68px);
+}
+
+/*****************************! work with us 영역 !*****************************/
+
+.work_with_us{
+    margin-top: -40px;
+    width: 100%;
+    height: 100%;
+    background-color: #272727;
+    font-family: "Mark Pro";
+}
+
+.work_with_us .font_size{
+    font-size: 48px;
+}
+
+.work_with_us .font_family{
+    font-family: "Mark Pro Bold";
+}
+
+.work_with_us .content{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+.work_with_us .content .learn_more{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.learn_box{
+    width: 100%;
+    height: 150px;
+    border-radius: 25px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.learn_box .text_area{
+    width: 700px;
+    height: 100%;
+    margin-left: auto;
+}
+
+.learn_box h3{
+    margin: 0px 10px 0px 50px;
+}
+
+/*****************************! Riot games info 영역 !*****************************/
+
+.game_info{
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1c;
+    margin-top: -40px;
+    padding: 0px 0px 1500px;
+}
+
+.game_info .font_size{
+    font-size: 48px;
+}
+
+.game_info .font_family{
+    font-family: "Mark Pro Bold";
+}
+
+.game_info .content{
+    width: 100%;
+    height: 100%;
+}
+
+.game_wrap{
+    margin-left: 100px;
+}
+
+.game_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 100%;
+}
+
+.operating_system{
+    background-color: gray;
+    width: 40px;
+    height: 30px;
+}
+
+
+.logo_img a img {
+    width: 200px;
+    height: auto;
+}
+
+
+.game_img{
+    width: 500px;
+    height: 600px;
+}
+
+.game_img a img{
+    width: 100%;
+    height: 100%;
+}

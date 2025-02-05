@@ -32,31 +32,35 @@
         </div>
     </header>
 
-    <!-- 슬로건 영역 -->
-    <section class="slogan">
-        <div class="content">
-            <h2 class="upper font_size margin font_family" style="margin: 0;">
-                <p>
-                    <div style="text-align: center;">
-                        In Riot
-                    </div>
-                </p>
-                <p>
-                    <div style="text-align: center; margin-top: -100px;">
-                        the players are priority
-                    </div>
-                </p>
-            </h2>
-            <button style="margin-top: -70px;">View More</button>
-        </div>
-    </section>
+    <!--? slogan에 적용한 sticky가 제대로 작동하지 않아 div로 감쌈 -->
+    <!--? slogan의 부모요소가 body라 video_container영역까지 적용되지 않는 것 같음 -->
+    <div class="temporary">
+        <!-- 슬로건 영역 -->
+        <section class="slogan">
+            <div class="content">
+                <h2 class="upper font_size margin font_family" style="margin: 0;">
+                    <p>
+                        <div style="text-align: center;">
+                            In Riot
+                        </div>
+                    </p>
+                    <p>
+                        <div style="text-align: center; margin-top: -100px;">
+                            the players are priority
+                        </div>
+                    </p>
+                </h2>
+                <button style="margin-top: -70px;">View More</button>
+            </div>
+        </section>
 
-    <!-- 비디오 영역 -->
-    <section class="video_container">
-        <div class="content">
-            <video class="hero_new__video" autoplay="" playsinline="" poster="https://www.riotgames.com/darkroom/1920/0dce4baaabd175f7ed1e08426653769d:14f2af5f5c8bf0cd1bc87af1c7730ed3/homepage-hero-general-brand.png" muted="" loop="" preload="auto"><source src="https://www.riotgames.com/darkroom/original/eedccd01fe642a9a6f5b5a4725c3c1c7:cab5f0653154a0cf9a07d7dc3334a71e/rg-brand-cinematic.mp4" type="video/mp4"></video>
-        </div>
-    </section>
+        <!-- 비디오 영역 -->
+        <section class="video_container">
+            <div class="content">
+                <video class="hero_new__video" autoplay="" playsinline="" poster="https://www.riotgames.com/darkroom/1920/0dce4baaabd175f7ed1e08426653769d:14f2af5f5c8bf0cd1bc87af1c7730ed3/homepage-hero-general-brand.png" muted="" loop="" preload="auto"><source src="https://www.riotgames.com/darkroom/original/eedccd01fe642a9a6f5b5a4725c3c1c7:cab5f0653154a0cf9a07d7dc3334a71e/rg-brand-cinematic.mp4" type="video/mp4"></video>
+            </div>
+        </section>
+    </div>
 
     <!-- 회사소개 영역 -->
     <section class="info">
@@ -158,7 +162,7 @@
             <h2 class="font_size font_family" style="text-align: center;"><div style=" display: inline-block; margin-top: 100px;">Riot Games</div></h2>
             <div class="game_wrap">
                 <div class="game_card">
-                    <!-- <div class="operating_system">
+                    <div class="operating_system">
                         <div class="icon">
                             <i class="fa-brands fa-windows"></i>
                             <i class="fa-brands fa-apple"></i>
@@ -174,17 +178,180 @@
                                 CHAMPION</div>
                         </h3>
 
-                        <div>
-                            Whether you like to dive straight into the fray, support your teammates, or something in between, there’s a spot for you on the Rift.
+                        <!-- <div style="color: darkgray;">
+                            Whether you like to dive straight into the fray, support your teammates
+                        </div> -->
+                    </div>
+                    <div class="box box1"></div>
+                    <div class="game_img img1">
+                        <a><img src="img/game_img/ahri.png" alt="lol"></a>
+                    </div>
+                </div>
+                <div class="game_card">
+                    <div class="operating_system">
+                        <div class="icon">
+                            <i class="fa-brands fa-windows"></i>
+                            <i class="fa-brands fa-playstation"></i>
+                            <i class="fa-brands fa-xbox"></i>
                         </div>
-                    </div> -->
-                    <div class="game_img">
-                        <a><img src="img/game_img/lol.png" alt="lol"></a>
+                    </div>
+                    <div class="logo_img" >
+                        <a><img src="img/game_img/valorant-logotype.png" alt="lol"></a>
+                    </div>
+                    <div class="game_description">
+                        <h3>
+                            <div>DEFY THE
+                                LIMITS</div>
+                        </h3>
+
+                        <!-- <div style="color: darkgray;">
+                            Whether you like to dive straight into the fray, support your teammates
+                        </div> -->
+                    </div>
+                    <div class="box box2"></div>
+                    <div class="game_img img2">
+                        <a><img src="img/game_img/varolant.png" alt="lol"></a>
+                    </div>
+                </div>
+                <div class="game_card">
+                    <div class="operating_system">
+                        <div class="icon">
+                            <i class="fa-brands fa-windows"></i>
+                            <i class="fa-brands fa-apple"></i>
+                            <i class="fa-solid fa-mobile"></i>
+                        </div>
+                    </div>
+                    <div class="logo_img" >
+                        <a><img src="img/game_img/tft-logotype-2021.png" alt="lol"></a>
+                    </div>
+                    <div class="game_description">
+                        <h3>
+                            <div>BATTLE FOR THE 
+                                <br/>
+                                CONVERGENCE</div>
+                        </h3>
+
+                        <!-- <div style="color: darkgray;">
+                            Whether you like to dive straight into the fray, support your teammates
+                        </div> -->
+                    </div>
+                    <div class="box box3"></div>
+                    <div class="game_img img3">
+                        <a><img src="img/game_img/tft.png" alt="lol"></a>
+                    </div>
+                </div>
+                <div class="game_card">
+                    <div class="operating_system">
+                        <div class="icon">
+                            <i class="fa-brands fa-windows"></i>
+                            <i class="fa-solid fa-mobile"></i>
+                        </div>
+                    </div>
+                    <div class="logo_img" >
+                        <a><img src="img/game_img/legends-of-runeterra-logotype.png" alt="lol"></a>
+                    </div>
+                    <div class="game_description">
+                        <h3>
+                            <div>Be Legendary
+                                <br/>
+                                CHOOSE YOUR CHAMPIONS
+                                <br/>
+                                COMBINE REGIONS TO CONQUER
+                            </div>
+                        </h3>
+
+                        <!-- <div style="color: darkgray;">
+                            Whether you like to dive straight into the fray, support your teammates
+                        </div> -->
+                    </div>
+                    <div class="box box4"></div>
+                    <div class="game_img img4">
+                        <a><img src="img/game_img/runeterra.png" alt="lol"></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="esports">
+        <h2 class="font_size font_family" style="text-align: center;"><div style=" display: inline-block; margin-top: 100px;">Esports</div></h2>
+        <div class="content">
+            <a href="#" class="lol_link">
+                <div class="lol_esports">
+                    <div class="lol_esportsLogo_img">
+                        <a><img src="img/lol-esports-logo-full.png" alt="lol_esports_logo"></a>
+                    </div>
+                    <div class="lol_esportspeople_img">
+                        <img src="img/lol.avif" alt="faker">
+                    </div>
+                    <div class="lol_esports_info">
+                        Check the schedule
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+            
+            <div class="riot_logo">
+                <h1><img src="img/icon.svg" alt=""></h1>
+            </div>
+
+            <a href="#" class="val_link">
+                <div div class="val_esports">
+                        <div class="val_esportsLogo_img">
+                            <a href=""><img src="img/vct-logo-v-full-rgb-white.png" alt=""></a>
+                        </div>
+                        <div class="val_esportspeople_img">
+                            <img src="img/val.avif" alt="">
+                        </div>
+                    <div class="val_esports_info">
+                        Check the schedule
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="slide_container">
+        <div class="slide_box">
+            <span>We’re hiring!</span>
+            <!-- 아이콘? 영역 -->
+        </div>
+        <div class="slide_box">
+            <span>We’re hiring!</span>
+            <!-- 아이콘? 영역 -->
+        </div>
+        <div class="slide_box">
+            <span>We’re hiring!</span>
+            <!-- 아이콘? 영역 -->
+        </div>
+        <div class="slide_box">
+            <span>We’re hiring!</span>
+            <!-- 아이콘? 영역 -->
+        </div>
+        <div class="slide_box">
+            <span>We’re hiring!</span>
+            <!-- 아이콘? 영역 -->
+        </div>
+        <div class="slide_box">
+            <span>We’re hiring!</span>
+            <!-- 아이콘? 영역 -->
+        </div>
+        <div class="slide_box">
+            <span>We’re hiring!</span>
+            <!-- 아이콘? 영역 -->
+        </div>
+    </section>
+
+    <section>
+        
+    </section>
+
+    <footer>
+
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
 

@@ -6,23 +6,45 @@
     scroll-behavior: smooth;
 }
 
+section{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+div, article, aside, footer, header, hgroup, main, menu, nav, section, h1, h2, h3, h4, h5, h6, p, ul, ol, li, nav, a, button, label, input, select, textarea, span {
+    box-sizing: border-box;
+}
+
+footer{
+    box-sizing: border-box;
+}
+
 html, body{
     width: 100vw;
     height: 100vh;
     margin : 0;
     padding : 0;
-    background-color: #000;
+    background-color: #1c1c1c;
     color: #fff;
+    cursor: url(img/normal.cur),auto;
+    /* scroll-snap-type: y proximity; */
+}
+
+html a,button,li{
+    cursor: url(img/link.cur),auto;
+}
+
+span{
     cursor: url(img/normal.cur),auto;
 }
 
-html a{
+/* html button{
     cursor: url(img/link.cur),auto;
-}
-
-html button{
-    cursor: url(img/link.cur),auto;
-}
+} */
+/* .snap{
+    scroll-snap-align: start;
+} */
 
 /*****************************! 헤더 영역 !*****************************/
 
@@ -33,7 +55,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     position: fixed;
-    z-index: 999;
+    z-index: 9999;
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -72,7 +94,8 @@ header .content {
 
 .temporary{
     width: 100%;
-    height: 100%;
+    height: 2500px;
+    background-color: #000;
 }
 
 /*****************************! 슬로건 영역 !*****************************/
@@ -115,14 +138,19 @@ header .content {
     border: none;
 }
 
+.slogan .content h2 {
+    text-shadow: -3px 0px #000, 0px 3px #000, 3px 0px #000, 0px -3px #000;
+}
+
 /*****************************! 비디오 영역 !*****************************/
 
 .video_container{
     margin-top: 150px;
     width: 100%;
-    height: 100%;
-    /* overflow: hidden; */
+    /* height: 100%; */
+    overflow: hidden;
     z-index: 88;
+    /* padding: 0px 0px 1900px; */
 }
 
 .video_container .content{
@@ -130,8 +158,8 @@ header .content {
 }
 
 .video_container .content video{
-    height: 100%;
-    width: 80%;
+    /* height: 100%; */
+    width: clamp(50%, 80%, 90%);
     object-fit: cover;
     background-size: cover;
     display: inline-block;
@@ -143,6 +171,7 @@ header .content {
 /*****************************! 회사소개 영역 !*****************************/
 
 .info{
+    scroll-snap-align: start;
     width: 100%;
     height: 100%;
     display: inline-block;
@@ -150,10 +179,17 @@ header .content {
     inset: auto;
     position: relative;
     overflow: visible;
-    /* padding: 0px 0px 2500px; */
+    /* padding: 100px 0px 0px; */
     font-family: "Mark Pro bold";
     background: linear-gradient(180deg, #111 0%, #272727 100%);
-    padding: 1900px 0px 0px;
+    /* padding: 1900px 0px 0px; */
+    /* margin: 1750px 0px 0px; */
+    scroll-snap-type: y proximity;
+}
+
+.spacer {
+    height: 300vh;  /* 기존 높이에서 높이를 늘려서 스크롤 영역을 더 길게 만듬 */
+    /* 필요에 따라 더 커지거나 줄어들 수 있습니다 */
 }
 
 .info .content{
@@ -188,9 +224,11 @@ i{
 .work_with_us{
     margin-top: -40px;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     background-color: #272727;
     font-family: "Mark Pro";
+    position: relative;
+    z-index: 999;
 }
 
 .work_with_us .font_size{
@@ -203,14 +241,14 @@ i{
 
 .work_with_us .content{
     width: 80%;
-    height: 100%;
+    /* height: 100%; */
     margin: 0 auto;
 }
 
 
 .work_with_us .content .learn_more{
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -219,17 +257,21 @@ i{
 .learn_box{
     width: 100%;
     height: 150px;
+    max-height: 300px; /* 기본 높이 설정 */
     border-radius: 25px;
     margin-top: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    transition: all 0.5s ease;
+    overflow: hidden; /* 내부 내용이 튀어나오지 않도록 설정 */
 }
 
 .learn_box .text_area{
-    width: 700px;
+    width: 500px;
     height: 100%;
-    margin-left: auto;
+    margin: 0 auto;
+    align-items: center;
 }
 
 .learn_box h3{
@@ -379,6 +421,9 @@ i{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    transition: transform 0.1s ease-out; /* 부드러운 움직임 */
+    transform-style: preserve-3d; /* 3D 효과 적용 */
+    perspective: 1000px; /* 원근감 추가 */
 }
 
 .lol_esports .lol_esportsLogo_img{
@@ -455,3 +500,362 @@ i{
     display: inline-block;
     width: ;
 } */
+
+.slide_container {
+    overflow: hidden;
+    white-space: nowrap;
+    max-height: 300px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.slide_wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.slide_track {
+    display: flex;
+    gap: clamp(35px, 9.333vw, 80px);
+    animation: marquee 20s linear infinite;
+    width: max-content; /* 요소들이 잘리지 않도록 설정 */
+}
+
+.slide_box {
+    flex: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.slide_box span {
+    font-size: clamp(60px, 6.8vw, 120px);
+    font-family: "Mark Pro Bold";
+}
+
+/* 애니메이션 */
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/*****************************! my info 영역 !*****************************/
+
+.my_info{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.my_info .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.git_hub{
+    width: 40%;
+    height: 400px;
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.e_mail{
+    width: 40%;
+    height: 400px;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.my_info_icon{
+    font-size: clamp(60px, 8vw, 100px);
+    margin-bottom: 38px;
+}
+
+.git_hub img{
+    width: clamp(155px, 3.733vw, 40px);
+    /* height: clamp(40px, 3.733vw, 40px); */
+    margin-bottom: 38px;
+}
+
+.my_info .content h3{
+    font-size: clamp(28px, 3.733vw, 40px);
+    margin: 10px 0;
+    font-family: "Mark Pro Bold";
+}
+
+.my_info .content a{
+    margin-top: calc(71px - 20px);
+    font-family: "Mark Pro";
+}
+
+.my_info .content p{
+    color: #ababab;
+    font-family: "Mark Pro";
+}
+
+/*****************************! Footer 영역 !*****************************/
+
+/*? footer 공통 요소 ?*/
+footer{
+    width: 100%;
+    height: 100%;
+    background-color: #e93740;
+    display: flex;
+    justify-content: center;
+}
+
+footer a{
+    color: #fff;
+    align-items: center !important;
+}
+
+footer ul{
+    box-sizing: border-box;
+    padding: 0;
+}
+
+footer li{
+    align-items: center !important;
+}
+
+footer .content{
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .title {
+    width: 100%;
+    text-align: center;
+}
+
+footer .content .title h1{
+    /* display: inline-block;
+    ;
+    font-size: 198px;
+    justify-content: center;
+    margin: 50px auto 0px; */
+    font-family: "Mark Pro Bold";
+    font-size: clamp(48px, 10vw, 198px);
+    margin: 0;
+    color: #fff;
+}
+
+/* 타이틀을 제외한 contents */
+/* .footer_main{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 100px;
+    font-family: "Mark Pro";
+} */
+
+.footer_main {
+    font-family: "Mark Pro";
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* 버튼 및 문구관련 */
+.btn_area{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.btn_area button {
+    background-color: #333333;
+    color: #fff;
+    font-family: "Mark Pro";
+    font-size: 24px;
+    border-radius: 50px;
+    padding: 20px 40px;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.btn_area button:hover{
+    background-color: #fff;
+    color: #e93740;
+}
+
+/* 맵 or 메뉴 영역 */
+.footer_map{
+    margin-left: auto;
+    text-align: left;
+}
+
+.cursor_none{
+    display: block;
+    z-index: 999;
+    cursor: alias;
+}
+
+.footer_map span,a{
+    font-size: 16px;
+}
+
+.footer_map .list{
+    box-sizing: border-box;
+}
+
+.footer_menu{
+    margin: 20px 0 50px;
+}
+
+.footer_menu a{
+    position: relative;
+    transition: color 0.3s;
+}
+
+.footer_menu a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    transform: scale(0);
+    transition: transform 1s;
+    transform-origin: left;
+}
+
+.footer_menu a.underline::after {
+    transform: scaleX(1);
+}
+
+.footer_nav{
+    gap: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer_nav li span{
+    color: #333333;
+}
+
+.footer_nav i{
+    margin: 0 0 4px 10px;
+}
+
+.pack_down ul{
+    display: flex;
+    flex-direction: column;
+}
+
+/*? inline-block을 사용해도 밑 줄이 text 길이 만큼 변하지 않음 ?*/
+.pack_down > span,
+.pack_down > ul > li {
+    display: inline-block;
+    margin: 14px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.pack_down ul li::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transform: scale(0);
+    transition: transform 1s;
+    transform-origin: left;
+}
+
+.pack_down ul li.underline::after {
+    width: 100%;
+    transform: scaleX(1);
+}
+
+.social_list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.social_list i{
+    font-size: 24px;
+    line-height: 3.5em;
+}
+
+.social_list i:hover{
+    color:#333333
+}
+
+/*****************************! go to top 영역 !*****************************/
+
+.go_to_top{
+    position: fixed;
+    bottom: 40px;
+    right: 50px;
+    background-color: #ca141d;
+    border-radius: 50%;
+    padding: 15px 15px;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.go_to_top i{
+    font-size: 24px;
+}
+
+/* TODO : 반응형 css */
+
+/* 	모바일 */
+@media (max-width: 767px){
+
+}
+
+/* 테블릿 세로 */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+/* 테블릿 가로 */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .info{
+        margin: 1450px 0px 0px;
+    }
+    .footer_main {
+        width: 90%;
+    }
+}
+
+/* 데스크탑 일반 */
+@media (min-width: 1200px) {
+    /*? ?*/
+}

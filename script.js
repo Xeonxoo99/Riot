@@ -247,3 +247,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+//! drop down menu
+const menuToggle = document.querySelector('.menu_toggle');
+const fullscreenMenu = document.querySelector('.fullscreen_menu');
+const body = document.querySelector('body');
+const header_menu = document.querySelector('.header_menu')
+
+menuToggle.addEventListener('click', () => {
+    fullscreenMenu.classList.toggle('active');
+    header_menu.style.display = "flex"
+    if (fullscreenMenu.classList.contains('active')) {
+        body.style.overflow = 'hidden';  // 스크롤 비활성화
+    } else {
+        body.style.overflow = '';  // 스크롤 활성화
+    }
+});

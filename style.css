@@ -134,6 +134,12 @@ header .content {
 
 .header_menu {
     display: none;
+    flex-direction: column;
+}
+
+.header_menu2 {
+    display: none;
+    flex-direction: column;
 }
 
 /* 기본 상태 */
@@ -145,12 +151,12 @@ header .content {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
     color: #fff;
     z-index: 9999;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     transition: opacity 0.4s ease, visibility 0.4s ease;
 }
@@ -163,7 +169,15 @@ header .content {
 
 .fullscreen_menu ul {
     list-style: none;
-    text-align: center;
+    text-align: left;
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.fullscreen_menu ul p{
+    border-bottom: 1px solid gray;
+    line-height: 3.5;
 }
 
 .fullscreen_menu li {
@@ -178,7 +192,7 @@ header .content {
 }
 
 .fullscreen_menu a:hover {
-    color: #14AE5C;  /* JobSprout 메인 컬러 */
+    color: #e93740;  /* JobSprout 메인 컬러 */
 }
 
 /*****************************! 임시로 슬로건과 비디오를 감싼 div !*****************************/
@@ -891,14 +905,14 @@ a {
 
 /*? inline-block을 사용해도 밑 줄이 text 길이 만큼 변하지 않음 ?*/
 .pack_down>span,
-.pack_down>ul>li {
+.pack_down>ul>li a{
     display: inline-block;
     margin: 14px 0;
     position: relative;
     cursor: pointer;
 }
 
-.pack_down ul li::after {
+.pack_down ul li a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -911,7 +925,7 @@ a {
     transform-origin: left;
 }
 
-.pack_down ul li.underline::after {
+.pack_down ul li a.underline::after {
     width: 100%;
     transform: scaleX(1);
 }

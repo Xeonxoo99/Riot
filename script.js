@@ -120,15 +120,42 @@ document.querySelectorAll('.learn_box').forEach(box => {
 //! game_info / pin & 가로 스크롤
 let sections = gsap.utils.toArray(".game_card");
 
-gsap.to(sections, {
-    xPercent: -100 * (sections.length - 2),
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".game_info",
-        pin: true,
-        scrub: 2, // 부드러운 스크롤 적용
-        end: "+=6000",
-    }
+// gsap.to(sections, {
+//     xPercent: -100 * (sections.length - 2),
+//     ease: "none",
+//     scrollTrigger: {
+//         trigger: ".game_info",
+//         pin: true,
+//         scrub: 2, // 부드러운 스크롤 적용
+//         end: "+=6000",
+//     }
+// });
+
+//? 반응형 3개 이상부터 적용 안됌
+gsap.matchMedia().add("(min-width: 1024px)", () => {
+    gsap.to(sections, {
+        xPercent: -100 * (sections.length - 2), // 기본 애니메이션 (PC)
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".game_info",
+            pin: true,
+            scrub: 2,
+            end: "+=6000",
+        }
+    });
+});
+
+gsap.matchMedia().add("(max-width: 1023px)", () => {
+    gsap.to(sections, {
+        xPercent: -100 * (sections.length - 1), // 더 적게 이동해서 마지막 카드가 잘리지 않게 함
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".game_info",
+            pin: true,
+            scrub: 2,
+            end: "+=5000", // 모바일에서는 스크롤 길이를 조정
+        }
+    });
 });
 
 //! esports 효과
@@ -202,12 +229,12 @@ val.addEventListener('mouseleave', () => {
 //? js에서는 :after 등을 사용 할 수 없어, class를 추가하는 방식으로 진행해야함
 
 // li요소
-document.querySelectorAll('.pack_down ul li').forEach(li => {
-    li.addEventListener('mouseover', () => {
-        li.classList.add('underline');
+document.querySelectorAll('.pack_down ul li a').forEach(a => {
+    a.addEventListener('mouseover', () => {
+        a.classList.add('underline');
     });
-    li.addEventListener('mouseout', () => {
-        li.classList.remove('underline');
+    a.addEventListener('mouseout', () => {
+        a.classList.remove('underline');
     });
 });
 
@@ -252,11 +279,13 @@ document.addEventListener("DOMContentLoaded", function () {
 const menuToggle = document.querySelector('.menu_toggle');
 const fullscreenMenu = document.querySelector('.fullscreen_menu');
 const body = document.querySelector('body');
-const header_menu = document.querySelector('.header_menu')
+const header_menu = document.querySelector('.header_menu');
+const header_menu2 = document.querySelector('.header_menu2')
 
 menuToggle.addEventListener('click', () => {
     fullscreenMenu.classList.toggle('active');
     header_menu.style.display = "flex"
+    header_menu2.style.display = "flex"
     if (fullscreenMenu.classList.contains('active')) {
         body.style.overflow = 'hidden';  // 스크롤 비활성화
     } else {

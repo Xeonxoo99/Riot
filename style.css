@@ -964,6 +964,13 @@ a {
 
 /* TODO : 반응형 css */
 
+
+@media (max-width: 550px) {
+    .learn_box .text_area {
+        width: 200px;
+    }
+}
+
 /*! 모바일 !*/
 @media (max-width: 767px) {
     .footer_main {
@@ -979,6 +986,10 @@ a {
 
     .footer_menu {
         text-align: center;
+    }
+
+    .my_info .content p{
+        display: none;
     }
 
     .esports {

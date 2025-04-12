@@ -1240,6 +1240,18 @@ a {
     .learn_box .text_area {
         width: 300px;
     }
+    .learn_box h3 {
+        margin-left: 30px;
+    }
+    .learn_box i { display:none}
+    .learn_box .text_area {width:200px;}
+
+    .game_info .font_size > div {margin-top:80px !important}
+
+    .game_card {margin-top:0;}
+    .logo_img a img { width:100px;}
+
+    .min_val .val_esportsLogo_img img {display: none;}
 
     .esports {
         height: 140%;

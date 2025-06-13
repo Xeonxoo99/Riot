@@ -1273,3 +1273,9 @@ a {
         margin: 1450px 0px 0px;
     }
 }
+
+@media (max-width: 1920px) {
+    .info {
+        margin: 2200px 0px 0px;
+    }
+}
